@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Terceirão B • 2026</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero" id="home" aria-label="Capa do Terceirão">
+    <img src="img/Foto da Turma.jpg" alt="Foto da turma Terceirão B" class="hero-img" />
+
+    <div class="hero-overlay"></div>
+    <div class="hero-vignette"></div>
+
+    <div class="hero-content">
+      <h1 class="hero-title">TERCEIRÃO 2026</h1>
+      <p class="hero-subtitle">O nosso último ano, a nossa melhor história.</p>
+      <a href="#sobre" class="hero-btn">Ver Nossa História</a>
+    </div>
+
+    <div class="hero-bottom-fade"></div>
+  </section>
+
+  <main>
+
+    <!-- SOBRE -->
+    <section class="section" id="sobre">
+      <div class="container">
+        <h2>Sobre a turma</h2>
+        <p class="muted">
+          Coloca aqui uma descrição: escola, cidade, o que vocês viveram, uma frase marcante etc.
+        </p>
+
+        <div class="grid">
+          <div class="card">
+            <h3>👥 Representantes</h3>
+            <p class="muted">Nome 1 • Nome 2</p>
+          </div>
+          <div class="card">
+            <h3>🎓 Frase</h3>
+            <p class="muted">“A gente fez história.”</p>
+          </div>
+          <div class="card">
+            <h3>🏫 Escola</h3>
+            <p class="muted">Nome da escola</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MOMENTOS -->
+    <section class="section alt" id="momentos">
+      <div class="container">
+        <h2>Momentos</h2>
+        <p class="muted">Clique na foto pra abrir em tela cheia.</p>
+
+        <div class="gallery">
+          <button class="photo" data-full="img/foto1.jpg">📸 Foto oficial</button>
+          <button class="photo" data-full="img/foto2.jpg">✨ Evento</button>
+          <button class="photo" data-full="img/foto3.jpg">🎉 Resenha</button>
+          <button class="photo" data-full="img/foto4.jpg">🏫 Escola</button>
+          <button class="photo" data-full="img/foto5.jpg">🚌 Passeio</button>
+          <button class="photo" data-full="img/foto6.jpg">🎓 Formatura</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- AVISOS -->
+    <section class="section" id="avisos">
+      <div class="container">
+        <h2>Avisos</h2>
+        <div class="card">
+          <ul id="lista-avisos" class="list"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section class="section alt" id="contato">
+      <div class="container">
+        <h2>Contato</h2>
+        <p class="muted">Coloque Insta, Drive e WhatsApp da turma.</p>
+
+        <div class="grid">
+          <a class="card link" href="#" target="_blank">
+            <h3>📷 Instagram</h3>
+            <p class="muted">@terceiraob</p>
+          </a>
+
+          <a class="card link" href="#" target="_blank">
+            <h3>💬 WhatsApp</h3>
+            <p class="muted">Link do grupo</p>
+          </a>
+
+          <a class="card link" href="#" target="_blank">
+            <h3>📁 Drive</h3>
+            <p class="muted">Materiais & fotos</p>
+          </a>
+        </div>
+
+        <footer class="footer">
+          <span>Terceirão B • <span id="ano"></span></span>
+        </footer>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 🎵 MÚSICA DE FUNDO -->
+  <audio id="bg-music" loop preload="auto">
+    <source src="audio/velha infancia.mpeg" type="audio/mpeg">
+    Seu navegador não suporta áudio.
+  </audio>
+
+  <button id="music-btn" class="music-btn" aria-label="Tocar música">
+    🎵 Música
+  </button>
+
+  <!-- MODAL -->
+  <div class="modal" id="modal">
+    <button class="modal-close" id="modalClose">✕</button>
+    <img id="modalImg" alt="Foto ampliada" />
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
