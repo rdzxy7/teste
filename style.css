@@ -53,6 +53,18 @@ body{
   overflow: hidden;
 }
 
+/* NOVO: fundo blur (vai aparecer forte no mobile) */
+.hero-bg-blur{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0;          /* no desktop fica invisível */
+  z-index: 0;
+}
+
 /* Desktop/tablet: cobre a tela */
 .hero-img{
   position: absolute;
@@ -60,7 +72,7 @@ body{
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 35%; /* ajusta o corte */
+  object-position: center 35%;
   z-index: 1;
 }
 
@@ -261,38 +273,29 @@ h2{margin:0 0 12px; font-size:28px}
   .gallery{grid-template-columns: repeat(2, 1fr)}
 }
 
-/* ===== MOBILE: FOTO COMPLETA + TEXTO NO MEIO ===== */
+/* ===== MOBILE: IGUAL AO PRINT + FOTO COMPLETA ===== */
 @media (max-width: 768px){
 
   .hero{
-    height: 100vh;             /* ocupa a tela inteira */
+    height: 100vh;
     min-height: 100vh;
-    align-items: center;
-    justify-content: center;
   }
 
+  /* fundo preenchendo e desfocado */
+  .hero-bg-blur{
+    opacity: 0.55;
+    filter: blur(10px) saturate(1.2) contrast(1.05);
+    transform: scale(1.08);
+  }
+
+  /* foto principal completa (sem cortar) */
   .hero-img{
-    position: absolute;        /* volta a ser fundo */
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;       /* MOSTRA A FOTO INTEIRA */
-    object-position: center;   /* centraliza */
-    background: #000;          /* bordas pretas se sobrar espaço */
+    object-fit: contain;
+    object-position: center;
+    background: transparent;
   }
 
-  .hero-overlay,
-  .hero-vignette{
-    position: absolute;
-    inset: 0;
-  }
-
-  /* remove o fade de baixo pra não “comer” a imagem */
-  .hero-bottom-fade{
-    display: none;
-  }
-
-  /* texto no centro da foto */
+  /* texto no meio */
   .hero-content{
     position: absolute;
     left: 50%;
@@ -304,8 +307,17 @@ h2{margin:0 0 12px; font-size:28px}
   }
 
   .hero-title{
-    font-size: clamp(34px, 9vw, 56px);
-    line-height: 1.05;
+    font-size: clamp(40px, 10vw, 64px);
+    line-height: 1.0;
     letter-spacing: 1px;
+  }
+
+  .hero-subtitle{
+    font-size: 16px;
+    line-height: 1.35;
+  }
+
+  .hero-bottom-fade{
+    display: none;
   }
 }
