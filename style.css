@@ -53,6 +53,7 @@ body{
   overflow: hidden;
 }
 
+/* Desktop/tablet: cobre a tela */
 .hero-img{
   position: absolute;
   inset: 0;
@@ -254,7 +255,37 @@ h2{margin:0 0 12px; font-size:28px}
   color: rgba(255,179,179,.9);
 }
 
+/* ===== RESPONSIVO ===== */
 @media (max-width: 900px){
   .grid{grid-template-columns: 1fr}
   .gallery{grid-template-columns: repeat(2, 1fr)}
+}
+
+/* ===== MOBILE: FOTO COMPLETA NO HERO (SEM CORTAR) ===== */
+@media (max-width: 768px){
+  .hero{
+    height: auto;          /* deixa a altura se ajustar */
+    min-height: 100vh;     /* ainda ocupa a tela */
+    align-items: flex-start;
+  }
+
+  .hero-img{
+    position: relative;    /* vira "imagem normal" no fluxo */
+    height: auto;
+    object-fit: contain;   /* MOSTRA A FOTO INTEIRA */
+    object-position: center;
+    background: #000;      /* caso sobrem bordas */
+  }
+
+  /* overlays continuam cobrindo tudo */
+  .hero-overlay,
+  .hero-vignette,
+  .hero-bottom-fade{
+    position: absolute;
+  }
+
+  .hero-content{
+    padding: 22px 18px;
+    margin-top: 12px;
+  }
 }
