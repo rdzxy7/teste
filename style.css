@@ -43,7 +43,7 @@ body{
 }
 .menu a:hover{color:var(--text); border-color: rgba(255,26,26,.65)}
 
-/* HERO (COM IMG) */
+/* HERO */
 .hero{
   position: relative;
   height: 90vh;
@@ -60,11 +60,11 @@ body{
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 35%; /* ajusta o corte */
+  object-position: center 35%;
   z-index: 1;
 }
 
-/* escurece e puxa pro vermelho */
+/* overlay */
 .hero-overlay{
   position: absolute;
   inset: 0;
@@ -77,7 +77,7 @@ body{
   z-index: 2;
 }
 
-/* bordas escuras (vignette) */
+/* vignette */
 .hero-vignette{
   position: absolute;
   inset: 0;
@@ -265,7 +265,7 @@ h2{margin:0 0 12px; font-size:28px}
 @media (max-width: 768px){
 
   .hero{
-    height: auto;               /* vira layout vertical */
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -274,25 +274,21 @@ h2{margin:0 0 12px; font-size:28px}
   }
 
   .hero-img{
-    position: relative;         /* sai do absoluto */
+    position: relative;   /* não é mais fundo */
     width: 100%;
-    height: auto;               /* mantém proporção */
-    object-fit: contain;        /* mostra inteira */
+    height: auto;
+    object-fit: contain;  /* foto inteira */
     object-position: center;
-    z-index: 1;
   }
 
-  /* tira as camadas por cima da foto */
   .hero-overlay,
   .hero-vignette,
   .hero-bottom-fade{
     display: none;
   }
 
-  /* texto embaixo da foto */
   .hero-content{
     position: relative;
-    z-index: 2;
     max-width: 100%;
     padding: 28px 18px 34px;
     text-align: center;
