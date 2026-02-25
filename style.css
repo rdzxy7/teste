@@ -1,3 +1,4 @@
+
 :root{
   --bg:#0b0000;
   --card:#140000;
@@ -53,7 +54,7 @@ body{
   overflow: hidden;
 }
 
-/* NOVO: fundo blur (vai aparecer forte no mobile) */
+/* FUNDO BLUR (aparece no mobile) */
 .hero-bg-blur{
   position: absolute;
   inset: 0;
@@ -61,7 +62,7 @@ body{
   height: 100%;
   object-fit: cover;
   object-position: center;
-  opacity: 0;          /* no desktop fica invisível */
+  opacity: 0;               /* desktop: invisível */
   z-index: 0;
 }
 
@@ -72,7 +73,7 @@ body{
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 35%;
+  object-position: center 35%; /* ajusta o corte */
   z-index: 1;
 }
 
@@ -273,7 +274,7 @@ h2{margin:0 0 12px; font-size:28px}
   .gallery{grid-template-columns: repeat(2, 1fr)}
 }
 
-/* ===== MOBILE: IGUAL AO PRINT + FOTO COMPLETA ===== */
+/* ===== MOBILE: IGUAL CAPA (TEXTO NO MEIO + BOTÃO MAIS EMBAIXO) ===== */
 @media (max-width: 768px){
 
   .hero{
@@ -295,26 +296,41 @@ h2{margin:0 0 12px; font-size:28px}
     background: transparent;
   }
 
-  /* texto no meio */
+  /* conteúdo vira layout de capa */
   .hero-content{
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: min(92vw, 680px);
-    padding: 0 16px;
+    inset: 0;
+    z-index: 4;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
     text-align: center;
+    padding: 0 18px;
+    gap: 14px;
   }
 
   .hero-title{
     font-size: clamp(40px, 10vw, 64px);
-    line-height: 1.0;
+    line-height: 1.02;
     letter-spacing: 1px;
+    margin: 0;
   }
 
   .hero-subtitle{
+    max-width: 26ch;
     font-size: 16px;
     line-height: 1.35;
+    margin: 0;
+  }
+
+  /* botão mais para baixo (igual print) */
+  .hero-btn{
+    margin-top: 18px;
+    padding: 14px 24px;
+    transform: translateY(110px); /* AJUSTE AQUI: 80px ~ 140px */
   }
 
   .hero-bottom-fade{
